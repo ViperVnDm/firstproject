@@ -1,17 +1,22 @@
 {
   "name": "firstproject",
   "version": "1.0.0",
-  "description": "Hello world full-stack app",
-  "main": "backend/server.js",
+  "description": "Next.js app ready for AWS App Runner",
   "scripts": {
-    "start": "node backend/server.js",
-    "test": "echo \"No tests\""
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "express": "^5.1.0"
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next-themes": "^0.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.4"
   }
 }
