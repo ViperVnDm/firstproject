@@ -1,12 +1,18 @@
-FROM node:18-alpine
-
+# Build stage
+FROM node:18-alpine AS builder
 WORKDIR /app
-
 COPY package*.json ./
-RUN npm install --production
+RUN npm install
+COPY . .
+RUN npm run build
 
-COPY backend ./backend
-COPY frontend ./frontend
-
+# Production stage
+FROM node:18-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
 EXPOSE 3000
-CMD ["node", "backend/server.js"]
+CMD ["npm", "start"]
