@@ -2,6 +2,11 @@
 
 Simple full-stack Hello World web application.
 
+## Documentation
+
+Additional project documentation is available in the `docs` directory.
+For an overview of planned site content, see [Content Structure](docs/content-structure.md).
+
 ## Running locally
 
 ```bash
